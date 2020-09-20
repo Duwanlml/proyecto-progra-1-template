@@ -44,7 +44,7 @@ public:
 class Conway: public Cuadricula{
 	protected:
 		Celda dt[50][50];
-
+		int cont,contfil,contcol;
 	public:
 		Conway();
 		void jugar();
