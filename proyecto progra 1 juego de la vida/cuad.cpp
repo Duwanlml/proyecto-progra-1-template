@@ -172,55 +172,11 @@ void Conway::jugar() {
 }
 
 void Conway::Reglas(){
-	int cont,contfil,contcol;
 	int **dt;
-	for(int i=1;i<contfil;i++){
-		for(int j=1;j<contcol;j++){
-			cont=0;
-			if(i!=0){
-				if(dt[i-1][j]==1){
-					cont++;
-				}
-			}
-			else if(i!=contfil-1){
-				if(dt[i+1][j]==1){
-					cont++;
-				}
-			}
-			else if(j!=0){
-				if(dt[i][j-1]==1){
-					cont++;
-				}
-			}
-			else if(j!=contfil-1){
-				if(dt[i][j+1]==1){
-					cont++;
-				}
-			}
-			else if(i!=0&&j!=0){
-				if(dt[i-1][j-1]==1){
-					cont++;
-				}
-			}
-			else if(i!=0&&j!=contcol-1){
-				if(dt[i-1][j+1]==1){
-					cont++;
-				}
-			}
-			else if(i!=contfil-1&&j!=0){
-				if(dt[i+1][j-1]==1){
-					cont++;
-				}
-			}
-			else if(i!=contfil-1&&j!=contcol-1){
-				if(dt[i+1][j+1]){
-				}
-			}
-			else if(dt[i][j]==1&&(cont<2||cont>3)){//si tiene 2 o 3 muertas muere
-				dt[i][j]=0;
-			}
-			else if(dt[i][j]==0&&cont==3){//si tiene 3 vecinas vivas nace
-				dt[i][j]=1;
+	for(int i=contfil-1;i<contfil+1;i++){
+		for(int j=contcol-1;j<contcol+1;j++){
+			if(i>=0&&i<fil&&j>=0&&j<col&&!(i==contfil&&j==contcol)){
+				cont+=dt[i][j];
 			}
 		}
 	}
