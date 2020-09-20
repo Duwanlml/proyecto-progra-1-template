@@ -148,11 +148,6 @@ Conway::Conway(){
 		
 			for(int i=1;i<fil;i++){
 			for(int j=1;j<col;j++){
-			}
-		}
-		
-			for(int i=1;i<fil;i++){
-			for(int j=1;j<col;j++){
 				int x=0;
 				dt[i][j].setValores(i,j,x);
 				dt[i][j].pintarse();
